@@ -10,23 +10,50 @@ namespace Calculator
     {
         int fnum;
         int snum;
+        private string op;
+
+        public string Op
+        {
+            get { return op; }
+            set { op = value; }
+        }
+
         public int Fnum { get; set; }
-        public bool sum(int result)
+        public bool Operation (int result,int fnum,int snum)
         {
-            return true;
+            if (op == "+")
+            {
+                if (result == fnum + snum)
+                    return true;
+                else
+                    return false;
+            }
+            else if (op == "-")
+            {
+                if (result == fnum - snum)
+                    return true;
+                else
+                    return false;
+            }
+            else if (op == "*")
+            {
+                if (result == fnum * snum)
+                    return true;
+                else
+                    return false;
+            }
+            else if (op == "/")
+            {
+                if (result == fnum / snum)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
+
         }
-        public int sub(int fnum,int snum)
-        {
-            return fnum - snum;
-        }
-        public int mul(int fnum,int snum)
-        {
-            return fnum * snum;
-        }
-        public double div(int fnum,int snum)
-        {
-            return fnum / snum;
-        }
+        
        
     }
 }
